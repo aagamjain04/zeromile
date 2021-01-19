@@ -48,7 +48,7 @@ app.use(
 		replaceWith: '_'
 	})
 );
-
+const secret = process.env.SECRET || 'thisissecret';
 app.use(helmet());
 const store = new MongoDBStore({
 	url: dbUrl,
@@ -60,7 +60,6 @@ store.on('error', function name(e) {
 	console.log('session store error', e);
 });
 
-const secret = process.env.SECRET || 'thisissecret';
 const sessionConfig = {
 	store,
 	name: 'session',
