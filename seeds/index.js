@@ -22,7 +22,7 @@ const seedDB = async () => {
 		const random187 = Math.floor(Math.random() * 187);
 		const price = Math.floor(Math.random() * 100) + 200;
 		const cmp = new Restaurant({
-			author: '600575ae3f45ea53f9053085',
+			author: '60073c0a0620f40015a03805',
 			//location: 'Mumbai,India',
 			location: `${cities[random187].city},${cities[random187].admin_name}`,
 			title: `${sample(descriptors)} ${sample(places)}`,

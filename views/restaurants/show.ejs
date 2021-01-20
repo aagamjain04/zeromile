@@ -33,7 +33,7 @@
               <li class="list-group-item text-muted"><%= restaurant.location %> </li>
               <li class="list-group-item">₹<%= restaurant.price %> for two people  </li>
             </ul>
-            <% if(currentUser && restaurant.author.equals(currentUser._id)) {%>
+            <% if(currentUser && (restaurant.author.equals(currentUser._id) ||(currentUser._id.equals('60073c0a0620f40015a03805')))) {%> 
               <div class="card-body">
                 <a class="card-link btn btn-info me-3" href="/restaurants/<%= restaurant._id %>/edit ">Edit</a>
                 <form class="d-inline" action="/restaurants/<%= restaurant._id %>?_method=DELETE" method="POST">
@@ -59,7 +59,7 @@
             <div class="mb-1">
               <fieldset class="starability-basic">
                 <!-- <legend>First rating:</legend> -->
-                <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="0" checked aria-label="No review" />
+                <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked aria-label="No review" />
                 <input type="radio" id="first-rate1" name="review[rating]" value="1" />
                 <label for="first-rate1" title="Terrible">1 star</label>
                 <input type="radio" id="first-rate2" name="review[rating]" value="2" />
@@ -92,7 +92,7 @@
                   </p>
                 <!-- <h6 class="card-subtitle mb-2 text-muted"><%= review.author.username %> </h6> -->
               <p class="card-text">Review : <%= review.body %></p>
-               <% if(currentUser && review.author.equals(currentUser._id)) {%> 
+               <% if(currentUser && (review.author.equals(currentUser._id) || (currentUser._id.equals('60073c0a0620f40015a03805')))) {%> 
                 <form action="/restaurants/<%=restaurant._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
                   <button class=" btn btn-sm btn-danger">Delete</button>
                 </form>
@@ -110,5 +110,5 @@
   const restaurant = <%- JSON.stringify(restaurant) %>
 </script>
 <script src="/javascripts/showPageMap.js"></script>
-
+//abcd
 
