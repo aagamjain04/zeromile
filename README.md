@@ -1,5 +1,5 @@
 # ZeroMile
-https://zeromile.herokuapp.com/
+https://zeromile.vercel.app/
 
 A restaurant review webapp listing various restaurants added by different users. 
 
